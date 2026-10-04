@@ -1,0 +1,66 @@
+/*Program the following tasks in C++, compile and execute them. 
+
+Task 
+Write a C++ program that create an array of 10 integers in main(). Implement the following functions to process the array.
+1.	Takes input for an array using void input(int *iptr, int size).
+2.	Displays the array elements using void display(int *iptr, int size).
+3.	Finds and display the sum of the element using void sum(int *iptr, int size).
+Demonstrate the execution of different functions in main().
+*/
+
+#include <iostream>
+using namespace std;
+
+
+void input(int *iptr, int size)
+{
+    cout << "Enter " << size << " integers:" << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        cin >> *(iptr + i);
+    }
+}
+
+
+void display(int *iptr, int size)
+{
+    cout << "Array elements are: ";
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << *(iptr + i) << " ";
+    }
+
+    cout << endl;
+}
+
+
+void sum(int *iptr, int size)
+{
+    int total = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        total = total + *(iptr + i);
+    }
+
+    cout << "Sum of array elements = " << total << endl;
+}
+
+int main()
+{
+    
+    int arr[10];
+
+    
+    input(arr, 10);
+
+    
+    display(arr, 10);
+
+    
+    sum(arr, 10);
+
+    return 0;
+}
